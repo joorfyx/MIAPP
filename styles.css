@@ -1,0 +1,39 @@
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Navegación */
+.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #0078d7;
+    padding: 10px 0;
+    border-top: 2px solid #005bb5;
+}
+
+.nav-btn {
+    background: none;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nav-btn:hover {
+    text-decoration: underline;
+}
+
+/* Contenido */
+#content {
+    padding: 20px;
+    margin-bottom: 50px; /* Para evitar superposición con la barra de navegación */
+}
