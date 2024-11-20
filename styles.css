@@ -1,132 +1,222 @@
-/* General */
+/* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ecf0f1;
+    font-family: 'Arial', sans-serif;
+    background: #f7f8fa;
+    color: #333;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    text-align: center;
 }
 
 .screen {
-    flex: 1;
     display: none;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    text-align: center;
-    background: #ffffff;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .screen.active {
-    display: block;
+    display: flex;
 }
 
-/* Botón "Al Azar" */
+/* Título Animado */
+h1.title {
+    font-size: 2rem;
+    color: #34495e;
+    margin: 20px 0;
+}
+
+h1.title.animate-title {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botón Generar Patrimonio */
 .random-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
     background: #3498db;
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out;
 }
 
 .random-btn:hover {
     background: #2980b9;
 }
 
-/* Patrimonio */
+/* Patrimonio Total */
 .patrimonio {
-    width: 90%;
-    background: #333;
-    color: white;
-    border-radius: 10px;
+    background: #929292; /* Fondo gris claro */
+    color: #ffffff; /* Texto en blanco */
+    border-radius: 15px;
     padding: 20px;
-    margin: 20px auto;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-/* Gráfica */
-.chart-container {
     width: 90%;
-    margin: 20px auto;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Categorías de inversión */
+.patrimonio:hover {
+    transform: scale(1.05);
+}
+
+.patrimonio h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto gris oscuro */
+}
+
+.patrimonio p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* Categorías de Inversión */
 .investment-category {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #f4f4f4;
     padding: 10px;
-    margin: 10px auto;
     border-radius: 10px;
     width: 90%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .investment-category span {
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 .percentage-box {
     padding: 5px 10px;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 1rem;
     color: white;
     cursor: pointer;
     text-align: center;
 }
 
 .percentage-box.green {
-    background: rgba(39, 174, 96, 0.8);
+    background: #27ae60;
 }
 
 .percentage-box.red {
-    background: rgba(192, 57, 43, 0.8);
+    background: #e74c3c;
 }
 
-/* Barra de navegación inferior */
+/* Botón Cerrar */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    color: #e74c3c;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+    color: #c0392b;
+}
+
+/* Gráfica */
+.chart-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px 0;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Detalles */
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.detail-item {
+    background: #ffffff;
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail-item h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.detail-item p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Footer Navigation */
 .footer-nav {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 10%; /* Barra ocupa el 10% */
-    background: #2c3e50;
+    background: #34495e;
     display: flex;
-    justify-content: space-around; /* Espaciado uniforme entre íconos */
+    justify-content: space-around;
     align-items: center;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .nav-item {
-    flex: 1; /* Cada ícono ocupa el mismo espacio */
     text-align: center;
     color: #ecf0f1;
-    font-size: 10px; /* Texto debajo de los íconos */
+    font-size: 0.8rem;
     cursor: pointer;
-    transition: transform 0.2s, color 0.2s;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav-item img {
-    width: 30px; /* Íconos más grandes */
-    height: 30px;
-    margin-bottom: 2px; /* Menor margen entre ícono y texto */
-    transition: transform 0.2s;
+.nav-item span {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
 .nav-item:hover {
     color: #1abc9c;
     transform: scale(1.1);
-}
-
-.nav-item.active img {
-    border: 2px solid #1abc9c;
-    border-radius: 50%;
 }
 
 .nav-item.active {

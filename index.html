@@ -3,43 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App de Inversión</title>
+    <title>App de Finanzas</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <!-- Pantallas -->
-    <div id="screen-home" class="screen active">
-        <button onclick="generateRandomWealth()" class="random-btn">Al Azar</button>
-        <div class="patrimonio">
+    <!-- Pantalla Principal -->
+    <div id="main-screen" class="screen active">
+        <h1 class="title animate-title">Resumen Financiero</h1>
+
+        <!-- Botón para generar patrimonio al azar -->
+        <button class="random-btn" onclick="generateRandomWealth()">Generar Patrimonio</button>
+
+        <!-- Patrimonio Total -->
+        <div class="patrimonio clear-bg" onclick="showDetails()">
             <h2>Patrimonio Total</h2>
             <p id="total-wealth">$0</p>
         </div>
-        <div class="chart-container">
-            <canvas id="investment-chart"></canvas>
-        </div>
+
+        <!-- Categorías de Inversión -->
         <div class="investment-category">
             <span>Inmuebles</span>
-            <span class="percentage-box green" onclick="toggleDisplay(this)">+5%</span>
+            <span id="real-estate" class="percentage-box green" onclick="toggleDisplay(this)">+5%</span>
         </div>
         <div class="investment-category">
             <span>Criptomonedas</span>
-            <span class="percentage-box red" onclick="toggleDisplay(this)">-10%</span>
+            <span id="crypto" class="percentage-box red" onclick="toggleDisplay(this)">-10%</span>
         </div>
         <div class="investment-category">
             <span>Otros</span>
-            <span class="percentage-box green" onclick="toggleDisplay(this)">+2%</span>
+            <span id="other-assets" class="percentage-box green" onclick="toggleDisplay(this)">+2%</span>
+        </div>
+    </div>
+
+    <!-- Vista de Detalles -->
+    <div id="details-screen" class="screen hidden">
+        <button class="close-btn" onclick="closeDetails()">X</button>
+        <h2 class="title">Detalles del Patrimonio</h2>
+
+        <!-- Detalles de las Categorías -->
+        <div class="details-container">
+            <div class="detail-item">
+                <h3>Inmuebles</h3>
+                <p id="real-estate-total">$0</p>
+            </div>
+            <div class="detail-item">
+                <h3>Criptomonedas</h3>
+                <p id="crypto-total">$0</p>
+            </div>
+            <div class="detail-item">
+                <h3>Otros</h3>
+                <p id="other-assets-total">$0</p>
+            </div>
+        </div>
+
+        <!-- Gráfica Detallada -->
+        <div class="chart-container">
+            <canvas id="details-chart"></canvas>
         </div>
     </div>
 
     <!-- Barra de navegación inferior -->
     <div class="footer-nav">
-        <div class="nav-item" onclick="switchScreen('screen-home')">
-            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Inicio">
+        <div class="nav-item" onclick="navigateTo('ai-screen')">
+            <span>🤖</span>
+            <p>IA</p>
+        </div>
+        <div class="nav-item" onclick="navigateTo('investment-screen')">
+            <span>💵</span>
+            <p>Inversiones</p>
+        </div>
+        <div class="nav-item" onclick="navigateTo('main-screen')">
+            <span>🏠</span>
             <p>Inicio</p>
+        </div>
+        <div class="nav-item" onclick="navigateTo('telegram-screen')">
+            <span>📩</span>
+            <p>Telegram</p>
+        </div>
+        <div class="nav-item" onclick="navigateTo('profile-screen')">
+            <span>👤</span>
+            <p>Perfil</p>
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
