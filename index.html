@@ -3,23 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIAPP - Plataforma de Inversiones</title>
+    <title>App de Inversión Mejorada</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navegación -->
-    <nav class="navbar">
-        <button class="nav-btn" id="ia-btn">IA</button>
-        <button class="nav-btn" id="dinero-btn">Dinero</button>
-        <button class="nav-btn" id="principal-btn">Principal</button>
-        <button class="nav-btn" id="telegram-btn">Telegram</button>
-        <button class="nav-btn" id="perfil-btn">Perfil</button>
-    </nav>
+    <!-- Pantallas -->
+    <div id="screen-profile" class="screen">
+        <div class="profile-section">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Avatar" class="profile-avatar">
+            <h2 id="profile-name">Nombre del Usuario</h2>
+            <p id="profile-email">correo@ejemplo.com</p>
+            <button class="edit-profile-btn" onclick="editProfile()">Editar Perfil</button>
+        </div>
+        <div class="profile-stats">
+            <p><strong>Total Invertido:</strong> $10,000</p>
+            <p><strong>Ganancias:</strong> $2,500</p>
+        </div>
+    </div>
 
-    <!-- Contenido -->
-    <main id="content">
-        <!-- Contenido dinámico cargado desde JS -->
-    </main>
+    <div id="screen-telegram" class="screen">
+        <div class="telegram-groups">
+            <h3>Grupos Disponibles</h3>
+            <ul>
+                <li>
+                    <span>Inversiones Cripto</span>
+                    <button onclick="joinGroup('Inversiones Cripto')">Unirse</button>
+                </li>
+                <li>
+                    <span>Inmuebles Premium</span>
+                    <button onclick="joinGroup('Inmuebles Premium')">Unirse</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="screen-home" class="screen active">
+        <div class="patrimonio">
+            <h2>Tu Patrimonio</h2>
+            <p>$15,000</p>
+        </div>
+    </div>
+
+    <!-- Barra de navegación -->
+    <div class="footer-nav">
+        <div class="nav-item" onclick="switchScreen('screen-profile')">
+            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Perfil">
+            <p>Perfil</p>
+        </div>
+        <div class="nav-item" onclick="switchScreen('screen-home')">
+            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Inicio">
+            <p>Inicio</p>
+        </div>
+        <div class="nav-item" onclick="switchScreen('screen-telegram')">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            <p>Telegram</p>
+        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>
