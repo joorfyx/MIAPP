@@ -25,28 +25,27 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 10%; /* Ajustado al 10% */
+    height: 10%; /* Barra ocupa el 10% */
     background: #2c3e50;
     display: flex;
-    justify-content: space-between; /* Distribuye los íconos de forma uniforme */
+    justify-content: space-around; /* Espaciado uniforme entre íconos */
     align-items: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    padding: 0 10px; /* Espaciado a los bordes */
 }
 
 .nav-item {
     flex: 1; /* Cada ícono ocupa el mismo espacio */
     text-align: center;
     color: #ecf0f1;
-    font-size: 10px; /* Tamaño del texto más pequeño */
+    font-size: 8px; /* Texto debajo de los íconos reducido */
     cursor: pointer;
     transition: transform 0.2s, color 0.2s;
 }
 
 .nav-item img {
-    width: 30px; /* Íconos más pequeños */
-    height: 30px;
-    margin-bottom: 2px; /* Menos separación entre ícono y texto */
+    width: 20px; /* Íconos mucho más pequeños */
+    height: 20px;
+    margin-bottom: 2px; /* Menor margen entre ícono y texto */
     transition: transform 0.2s;
 }
 
