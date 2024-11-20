@@ -20,6 +20,76 @@ body {
     display: block;
 }
 
+/* Botón "Al Azar" */
+.random-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.random-btn:hover {
+    background: #2980b9;
+}
+
+/* Patrimonio */
+.patrimonio {
+    width: 90%;
+    background: #333;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Gráfica */
+.chart-container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Categorías de inversión */
+.investment-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.investment-category span {
+    font-size: 14px;
+}
+
+.percentage-box {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+.percentage-box.green {
+    background: rgba(39, 174, 96, 0.8);
+}
+
+.percentage-box.red {
+    background: rgba(192, 57, 43, 0.8);
+}
+
 /* Barra de navegación inferior */
 .footer-nav {
     position: fixed;
@@ -37,14 +107,14 @@ body {
     flex: 1; /* Cada ícono ocupa el mismo espacio */
     text-align: center;
     color: #ecf0f1;
-    font-size: 8px; /* Texto debajo de los íconos reducido */
+    font-size: 10px; /* Texto debajo de los íconos */
     cursor: pointer;
     transition: transform 0.2s, color 0.2s;
 }
 
 .nav-item img {
-    width: 20px; /* Íconos mucho más pequeños */
-    height: 20px;
+    width: 30px; /* Íconos más grandes */
+    height: 30px;
     margin-bottom: 2px; /* Menor margen entre ícono y texto */
     transition: transform 0.2s;
 }

@@ -8,55 +8,38 @@
 </head>
 <body>
     <!-- Pantallas -->
-    <div id="screen-ia" class="screen active">
-        <h1>Pantalla de IA</h1>
-        <p>Interactúa con nuestro asistente de inteligencia artificial.</p>
-    </div>
-
-    <div id="screen-money" class="screen">
-        <h1>Pantalla de Inversiones</h1>
-        <p>Gestiona tus inversiones y operaciones financieras.</p>
-    </div>
-
-    <div id="screen-home" class="screen">
-        <h1>Pantalla Principal</h1>
-        <p>Consulta estadísticas y gráficos de tus inversiones.</p>
-    </div>
-
-    <div id="screen-telegram" class="screen">
-        <h1>Pantalla de Telegram</h1>
-        <p>Únete a grupos y colabora en inversiones conjuntas.</p>
-    </div>
-
-    <div id="screen-profile" class="screen">
-        <h1>Pantalla de Perfil</h1>
-        <p>Configura tu información personal y preferencias.</p>
+    <div id="screen-home" class="screen active">
+        <button onclick="generateRandomWealth()" class="random-btn">Al Azar</button>
+        <div class="patrimonio">
+            <h2>Patrimonio Total</h2>
+            <p id="total-wealth">$0</p>
+        </div>
+        <div class="chart-container">
+            <canvas id="investment-chart"></canvas>
+        </div>
+        <div class="investment-category">
+            <span>Inmuebles</span>
+            <span class="percentage-box green" onclick="toggleDisplay(this)">+5%</span>
+        </div>
+        <div class="investment-category">
+            <span>Criptomonedas</span>
+            <span class="percentage-box red" onclick="toggleDisplay(this)">-10%</span>
+        </div>
+        <div class="investment-category">
+            <span>Otros</span>
+            <span class="percentage-box green" onclick="toggleDisplay(this)">+2%</span>
+        </div>
     </div>
 
     <!-- Barra de navegación inferior -->
     <div class="footer-nav">
-        <div class="nav-item" onclick="switchScreen('screen-ia')">
-            <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="IA">
-            <p>IA</p>
-        </div>
-        <div class="nav-item" onclick="switchScreen('screen-money')">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828817.png" alt="Inversiones">
-            <p>Inversiones</p>
-        </div>
         <div class="nav-item" onclick="switchScreen('screen-home')">
             <img src="https://cdn-icons-png.flaticon.com/512/1946/1946436.png" alt="Inicio">
             <p>Inicio</p>
         </div>
-        <div class="nav-item" onclick="switchScreen('screen-telegram')">
-            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
-            <p>Telegram</p>
-        </div>
-        <div class="nav-item" onclick="switchScreen('screen-profile')">
-            <img src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png" alt="Perfil">
-            <p>Perfil</p>
-        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
